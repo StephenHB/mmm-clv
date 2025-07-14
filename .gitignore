@@ -34,3 +34,7 @@ __pycache__/
 # Ignore system files
 .DS_Store
 Thumbs.db
+
+# Ignore generated plots and reports
+clv_models/plots/
+clv_models/visualization_report.html

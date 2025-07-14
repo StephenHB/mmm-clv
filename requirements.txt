@@ -2,6 +2,9 @@ pandas
 numpy
 lifetimes
 requests
-beautifulsoup4 
-kagglehub 
-openpyxl 
+beautifulsoup4
+kagglehub
+openpyxl
+matplotlib
+seaborn
+ruff 
