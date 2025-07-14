@@ -50,11 +50,11 @@ Data scientists, analysts, and business stakeholders interested in customer anal
 
 ## Timeline
 
-- **Week 1:** Project setup, requirements gathering, and reference article ingestion
-- **Week 2:** Implement modular BG/NBD and Gamma-Gamma model classes, and demonstrate usage of the lifetimes package for CLV modeling (including a code example and documentation)
-- **Week 3:** Develop data ingestion and preprocessing utilities
-- **Week 4:** Create example scripts/notebooks and documentation
-- **Week 5:** Testing, review, and extensibility planning
+- Project setup, requirements gathering, and reference article ingestion
+- Implement modular BG/NBD and Gamma-Gamma model classes, and demonstrate usage of the lifetimes package for CLV modeling (including a code example and documentation)
+   Develop data ingestion and preprocessing utilities
+- Create example scripts/notebooks and documentation
+- Testing, review, and extensibility planning
 
 ## Extensibility and Future Work
 
