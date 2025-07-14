@@ -4,3 +4,4 @@ lifetimes
 requests
 beautifulsoup4 
 kagglehub 
+openpyxl 
