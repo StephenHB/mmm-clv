@@ -14,6 +14,48 @@ This dataset contains all the transactions occurring for a UK-based and register
 - **CustomerID**: Customer number. Nominal. A 5-digit integral number uniquely assigned to each customer.
 - **Country**: Country name. Nominal. The name of the country where a customer resides.
 
+## Project Setup
+
+1. **Create and activate a virtual environment:**
+   ```sh
+   python3 -m venv marketing_env
+   source marketing_env/bin/activate
+   ```
+2. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. **Download the dataset:**
+   Place the CSV file (e.g., `Year_2010_2011.csv`) in a known location (update the path in scripts if needed).
+
+## Running the CLV Analysis POC
+
+To run the end-to-end CLV analysis and generate results:
+```sh
+python clv_models/clv_analysis_poc.py
+```
+- This will load and preprocess the data, fit BG/NBD and Gamma-Gamma models, and output sample CLV predictions to `clv_results_sample.csv`.
+
+## Generating Visualizations and HTML Report
+
+To generate all visualizations and a comprehensive HTML report:
+```sh
+python clv_models/visualization.py
+```
+- This will create plots for raw data, RFM metrics, CLV results, and the probability_alive heatmap.
+- The report will be saved as `clv_models/visualization_report.html` (open in your browser).
+- All plot images are saved in `clv_models/plots/` (ignored by git).
+
+### Probability Alive Heatmap
+The probability_alive heatmap visualizes the likelihood that a customer is still "alive" (active) as a function of their purchase frequency and recency, based on the BG/NBD model. This helps identify which customers are most likely to return and can guide retention strategies.
+
+## Linting the Codebase
+
+To check code quality and style using ruff:
+```sh
+ruff check .
+```
+
 ## Models Used for CLV
 
 ### BG/NBD Model
