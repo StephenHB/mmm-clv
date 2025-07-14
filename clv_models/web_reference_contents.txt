@@ -1,0 +1,9 @@
+# Contents from reference articles for CLV modeling
+
+from clv_models import get_reference_articles
+
+if __name__ == "__main__":
+    articles = get_reference_articles()
+    for url, content in articles.items():
+        print(f"\n--- Content from {url} ---\n")
+        print(content[:1000], "...\n") 
