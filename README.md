@@ -1,6 +1,6 @@
-# MMM-CLV: Multi-Model Customer Lifetime Value Analysis
+# MMM-CLV: Customer Lifetime Value Analysis
 
-A comprehensive Customer Lifetime Value (CLV) analysis framework supporting multiple modeling approaches including Lifetimes (BG/NBD + Gamma-Gamma) and Google Meridian models.
+A comprehensive Customer Lifetime Value (CLV) analysis framework using Lifetimes (BG/NBD + Gamma-Gamma) models.
 
 ## Project Structure
 
@@ -11,18 +11,14 @@ mmm-clv/
 │   ├── data_preprocess/         # Data preprocessing modules
 │   │   ├── data_preprocess_utils.py  # Shared utilities
 │   │   ├── lifetimes/           # Lifetimes-specific preprocessing
-│   │   └── meridian/            # Meridian-specific preprocessing
 │   └── model/                   # Core model algorithms
 │       ├── model_utils.py       # Shared model utilities
 │       ├── lifetimes/           # Lifetimes model implementation
 │       │   ├── models.py        # BG/NBD and Gamma-Gamma models
 │       │   ├── clv_analysis_poc.py  # Analysis pipeline
 │       │   └── visualization.py # Visualization tools
-│       └── meridian/            # Meridian model implementation
-│           └── meridian_model.py # Meridian model (placeholder)
 ├── data/                        # Data storage
 │   ├── lifetimes/              # Lifetimes model data
-│   └── meridian/               # Meridian model data
 ├── notebooks/                   # Development and testing
 ├── test/                        # Unit tests
 ├── requirements.txt             # Dependencies
@@ -37,10 +33,6 @@ mmm-clv/
 - **Probability Alive**: Calculates customer activity probability
 - **Visualization**: Comprehensive plots and HTML reports
 
-### Meridian Model (Coming Soon)
-- Google Meridian implementation for CLV analysis
-- Advanced feature engineering
-- Model comparison capabilities
 
 ## Quick Start
 
@@ -60,9 +52,7 @@ python -c "import sys; sys.path.insert(0, '.'); from src.model.lifetimes.models 
 
 ### 2. Prepare Data
 
-Place your transaction data CSV file in the appropriate data directory:
-- For Lifetimes: `data/lifetimes/`
-- For Meridian: `data/meridian/`
+Place your transaction data CSV file in `data/lifetimes/` directory.
 
 Expected CSV columns:
 - `Invoice`: Invoice number (cancellations start with 'C')
@@ -119,18 +109,6 @@ gamma_gamma = GammaGammaCLVModel().fit(summary['frequency'], summary['monetary_v
 clv = gamma_gamma.customer_lifetime_value(bg_nbd, ...)
 ```
 
-### Meridian Model (Placeholder)
-
-```python
-from src.model.meridian.meridian_model import MeridianCLVModel
-
-# Initialize and fit model
-meridian = MeridianCLVModel()
-meridian.fit(X, y)
-
-# Predict CLV
-predictions = meridian.predict(X_test)
-```
 
 ## Output Files
 
@@ -193,7 +171,6 @@ pytest test/
 - [Lifetimes Documentation](https://github.com/CamDavidsonPilon/lifetimes)
 - [BG/NBD Model Paper](https://www.brucehardie.com/papers/018/fader_et_al_mksc_05.pdf)
 - [Gamma-Gamma Model Paper](https://www.brucehardie.com/notes/025/gamma_gamma.pdf)
-- [Google Meridian](https://research.google/pubs/pub48840/) (Coming Soon)
 
 ## Contributing
 
