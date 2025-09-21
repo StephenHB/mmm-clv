@@ -66,6 +66,21 @@ class GammaGammaCLVModel:
             raise RuntimeError("Model must be fit before prediction.")
         return self.model.conditional_expected_average_profit(frequency, monetary_value)
 
+    def customer_lifetime_value(self, bg_nbd_model, frequency, recency, T, monetary_value, time=30, freq='D', discount_rate=0.01):
+        """Calculate customer lifetime value using BG/NBD and Gamma-Gamma models."""
+        if not self.fitted:
+            raise RuntimeError("Model must be fit before prediction.")
+        return self.model.customer_lifetime_value(
+            bg_nbd_model.model,
+            frequency,
+            recency,
+            T,
+            monetary_value,
+            time=time,
+            freq=freq,
+            discount_rate=discount_rate
+        )
+
     @property
     def params_(self):
         return self.model.params_
