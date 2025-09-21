@@ -7,4 +7,13 @@ kagglehub
 openpyxl
 matplotlib
 seaborn
-ruff 
+ruff
+# Meridian MMM dependencies
+jax
+jaxlib
+numpyro
+arviz
+scipy
+scikit-learn
+tensorflow-probability
+# Note: Meridian needs to be installed from GitHub: git+https://github.com/google/meridian.git 
